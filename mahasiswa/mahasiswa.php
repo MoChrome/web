@@ -12,17 +12,21 @@
 </head>
 
 <body>
-    <div class=".container-fluid p-3 mb-2 bg-light" style="height: 100vh">
+    <div class=".container-fluid p-0 mb-0 bg-info" style="height: 110vh">
+        <nav class="navbar p-0">
+            <div class="container-fluid shadow bg-body p-2 bg-light shadow">
+                <h3 style="padding-left: 7.5%">Data Mahasiswa</h3>
+                <div style="padding-right: 7.5%;">
+                    <a href="logout.php" class="btn btn-warning" style="margin-bottom: 10px;" onclick="return confirm('Are You Sure?')"><i class="fa fa-sign-out"></i>Logout</a>
+                </div>
+            </div>
+        </nav>
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10 shadow p-3 mb-5 bg-white rounded">
-                <h2>Data Mahasiswa</h2>
-                <div class="row">
-                    <div class="col-6"><button type="button" class="btn btn-info" style="margin-bottom: 10px;" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-user-plus"></i>Tambah</button></div>
-                    <div class="col-6">
-                        <a href="logout.php" class="btn btn-warning float-right" style="margin-bottom: 10px;" onclick="confirm('yakin')"><i class="fa fa-sign-out"></i>Logout</a>
-                    </div>
-                </div>
+
+                <button type="button" class="btn btn-info" style="margin-bottom: 10px;" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-user-plus"></i>Tambah</button>
+
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">

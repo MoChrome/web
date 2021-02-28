@@ -11,7 +11,7 @@ if (!empty($_SESSION['usernm']) and !empty($_SESSION['passwd'])) {
         $data = mysqli_fetch_array($tampil);
 
         if (empty($data['usernm'])) {
-            echo "<script>alert('Gagal Login');
+            echo "<script>alert('Beep Boop! Login Failed!');
             window.location='login.php';</script>";
         } elseif ($_SESSION["captcha"] != $_POST["captcha"]) {
             echo "<script>alert('Wrong Captcha!')</script>";
@@ -19,7 +19,7 @@ if (!empty($_SESSION['usernm']) and !empty($_SESSION['passwd'])) {
             $_SESSION['id'] = $data['id'];
             $_SESSION['usernm'] = $data['usernm'];
             $_SESSION['passwd'] = $data['passwd'];
-            echo "<script>alert('Berhasil Login');
+            echo "<script>alert('Login Success!');
         window.location='mahasiswa.php';</script>";
         }
     }
@@ -36,19 +36,26 @@ if (!empty($_SESSION['usernm']) and !empty($_SESSION['passwd'])) {
     </head>
 
     <body>
-        <div class="container-fluid">
-            <div class="container bg-light shadow p-3 mb-5 bg-body rounded">
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4">
+        <div class="container-fluid bg-success vh-100 p-0">
+            <nav class="navbar p-0">
+                <div class="container-fluid shadow bg-body p-2  bg-light">
+                    <span class="navbar-brand mb-0">
+                        <h3>Pendataan Mahasiswa</h3>
+                    </span>
+                </div>
+            </nav>
+            <div class="container shadow-lg pt-5 p-3 mb-5 bg-body rounded" style="height: 90%;">
+                <div class="row d-flex justify-content-center" style="height: 70%;">
+                    <div class="col-4 align-self-center">
+                        <h4>Login</h4>
                         <form method="POST" action="login.php">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
-                                <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                                <input name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Username" aria-describedby="emailHelp" required />
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input name="password" type="password" class="form-control" id="exampleInputPassword1" required />
+                                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukan Password" required />
                             </div>
                             <div class="row justify-content-end">
                                 <div class="col-3">
@@ -65,7 +72,6 @@ if (!empty($_SESSION['usernm']) and !empty($_SESSION['passwd'])) {
                             </div>
                         </form>
                     </div>
-                    <div class="col-4"></div>
                 </div>
             </div>
         </div>
