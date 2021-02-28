@@ -4,7 +4,6 @@ include 'config.php';
 if (!empty($_SESSION['usernm']) and !empty($_SESSION['passwd'])) {
     header('location:mahasiswa.php');
 } else {
-
     if (isset($_POST['login'])) {
         $usernm = $_POST['username'];
         $passwd = md5($_POST['password']);
